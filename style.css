@@ -1,4 +1,4 @@
-/* style.css */
+/* Global Styles */
 * {
    margin: 0;
    padding: 0;
@@ -10,96 +10,87 @@ body {
    background-color: #f4f4f4;
 }
 
-.container {
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 20px;
-}
-
-header {
-   background-color: #333;
-   padding: 20px;
-   color: white;
-   text-align: center;
-   position: relative;
-   animation: slideIn 1s ease-in-out;
-}
-
-@keyframes slideIn {
-   from {
-       transform: translateY(-100%);
-       opacity: 0;
-   }
-   to {
-       transform: translateY(0);
-       opacity: 1;
-   }
-}
-
-nav {
-   background-color: #444;
-   text-align: center;
-   padding: 15px;
-   margin: 20px 0;
-   animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-   from {
-       opacity: 0;
-   }
-   to {
-       opacity: 1;
-   }
-}
-
-nav ul {
-   list-style: none;
+/* Dashboard Container */
+.dashboard-container {
    display: flex;
-   justify-content: center;
-   gap: 20px;
+   height: 100vh;
 }
 
-nav ul li {
-   display: inline;
-}
-
-nav ul li a {
-   color: white;
-   text-decoration: none;
-   padding: 10px 20px;
-   border: 2px solid transparent;
-   transition: background-color 0.3s, transform 0.3s;
-}
-
-nav ul li a:hover {
-   background-color: #555;
-   transform: scale(1.1);
-   border: 2px solid white;
-   transition: background-color 0.3s, transform 0.3s;
-}
-
-.main-content {
-   background-color: white;
+/* Sidebar */
+.sidebar {
+   width: 250px;
+   background-color: #333;
+   color: #fff;
    padding: 20px;
-   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+.sidebar h2 {
+   font-size: 22px;
+   font-weight: bold;
+   color: #fff;
+}
+
+.sidebar-menu {
+   list-style-type: none;
+   padding: 0;
+}
+
+.sidebar-menu li {
+   margin-bottom: 20px;
+}
+
+.sidebar-menu li a {
+   color: #fff;
+   text-decoration: none;
+   font-size: 18px;
+}
+
+.sidebar-menu li a:hover {
+   background-color: #444;
+   padding: 10px;
    border-radius: 5px;
-   animation: fadeInUp 1.5s ease-in-out;
 }
 
-@keyframes fadeInUp {
-   from {
-       transform: translateY(50px);
-       opacity: 0;
-   }
-   to {
-       transform: translateY(0);
-       opacity: 1;
-   }
+/* Main Content */
+.main-content {
+   flex-grow: 1;
+   padding: 20px;
+   background-color: #fff;
 }
 
-h1 {
-   font-size: 2.5em;
+.main-content header {
+   font-size: 22px;
+   margin-bottom: 25px;
+   text-align: center;
+}
+
+/* Cards Section */
+.content {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 20px;
+   grid-auto-rows: minmax(150px, auto); /* Ensure that cards have a minimum height */
+}
+
+.card {
+   background-color: #f4f4f4;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   text-align: center;
+}
+
+.card h2 {
+   font-size: 22px;
    margin-bottom: 10px;
 }
 
+.card p {
+   font-size: 16px;
+   color: #555;
+}
